@@ -1,80 +1,91 @@
-/**
- * Global CSS.
- * Docusaurus classic template bundles Infima by default.
- */
-
 /* =========================
-   Light mode
+   Global theme tokens
    ========================= */
+
+/* Light mode */
 :root {
-  /* Primary: Prussian Blue */
-  --ifm-color-primary: #023047;
-  --ifm-color-primary-dark: #012a3f;
-  --ifm-color-primary-darker: #01263a;
-  --ifm-color-primary-darkest: #011e2f;
-  --ifm-color-primary-light: #033a57;
-  --ifm-color-primary-lighter: #04405f;
-  --ifm-color-primary-lightest: #055072;
-
-  /* Accents */
-  --ifm-color-warning: #ffb703; /* honey */
-  --ifm-color-danger: #fb8500;  /* orange */
-
-  /* Links & subtle interaction */
-  --ifm-link-color: #219ebc;
+  /* Brand */
+  --ifm-color-primary: #023047; /* Prussian Blue */
+  --ifm-link-color: #219ebc; /* teal */
   --ifm-link-hover-color: #1b8aa5;
 
-  --ifm-code-font-size: 95%;
+  --ifm-color-warning: #ffb703; /* honey */
+  --ifm-color-danger: #fb8500; /* orange */
 
-  /* Warm code highlight */
+  /* Base UI */
+  --ifm-background-color: #ffffff;
+  --ifm-font-color-base: #0b1f2a;
+
+  /* Your page “surfaces” */
+  --site-surface: #ffffff;          /* cards */
+  --site-surface-2: #f7f7f5;        /* section background */
+  --site-ink: #023047;              /* strong headings */
+  --site-muted: rgba(2, 48, 71, 0.72);
+
+  /* Consistent band/footer */
+  --site-band-bg: #023047;
+  --site-band-text: rgba(255, 255, 255, 0.92);
+
+  /* Shadows */
+  --site-shadow: 0 10px 28px rgba(0, 0, 0, 0.12);
+
+  /* Code highlight */
   --docusaurus-highlighted-code-line-bg: rgba(255, 183, 3, 0.2);
 }
 
-/* =========================
-   Dark mode
-   ========================= */
-[data-theme='dark'] {
-  /* Keep Prussian Blue dominant, slightly lifted for readability */
+/* Dark mode */
+[data-theme="dark"] {
+  /* Keep primary interactive color teal for contrast on dark */
   --ifm-color-primary: #219ebc;
-  --ifm-color-primary-dark: #1b8aa5;
-  --ifm-color-primary-darker: #187f98;
-  --ifm-color-primary-darkest: #13657a;
-  --ifm-color-primary-light: #2fa9c4;
-  --ifm-color-primary-lighter: #39b1cb;
-  --ifm-color-primary-lightest: #5fc2d8;
+  --ifm-link-color: #219ebc;
+  --ifm-link-hover-color: #6cc7dd;
 
-  /* Accents remain warm */
   --ifm-color-warning: #ffb703;
   --ifm-color-danger: #fb8500;
 
-  /* Code highlight slightly stronger in dark mode */
-  --docusaurus-highlighted-code-line-bg: rgba(255, 183, 3, 0.3);
+  /* Base UI */
+  --ifm-background-color: #0b141a;    /* deep charcoal */
+  --ifm-font-color-base: #eaf2f6;     /* readable light text */
+
+  /* Surfaces (IMPORTANT: no white cards in dark mode) */
+  --site-surface: #0f212b;            /* cards */
+  --site-surface-2: #0c1a22;          /* section background */
+  --site-ink: #eaf2f6;
+  --site-muted: rgba(234, 242, 246, 0.78);
+
+  /* Consistent band/footer (same color) */
+  --site-band-bg: #023047;            /* Prussian blue */
+  --site-band-text: rgba(255, 255, 255, 0.9);
+
+  --site-shadow: 0 10px 28px rgba(0, 0, 0, 0.35);
+
+  --docusaurus-highlighted-code-line-bg: rgba(255, 183, 3, 0.28);
 }
 
-/* =========================
-   Optional polish
-   ========================= */
-
-/* Headings feel more anchored */
-.markdown h1,
-.markdown h2,
-.markdown h3 {
-  color: var(--ifm-color-primary);
+/* Footer uses the same band color */
+.footer {
+  margin-top: 0 !important;
+  border-top: 0 !important;
+  background-color: var(--site-band-bg);
+  color: var(--site-band-text);
 }
 
-/* Links feel intentional, not loud */
-a {
-  text-decoration-thickness: 1px;
-  text-underline-offset: 2px;
+.footer__title {
+  color: rgba(255, 183, 3, 0.95); /* honey accent */
 }
 
-/* Featured / Start Here badge tuning */
-.badge--primary {
-  background-color: #ffb703;
-  color: #023047;
+.footer__link-item {
+  color: rgba(255, 255, 255, 0.88);
 }
 
-.badge--secondary {
-  background-color: #023047;
-  color: #ffffff;
+.footer__link-item:hover {
+  color: #ffb703;
+}
+
+.footer__copyright {
+  color: rgba(255, 255, 255, 0.75);
+}
+
+.footer--dark {
+  border-top: 0 !important;
 }
