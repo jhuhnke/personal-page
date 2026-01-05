@@ -1,30 +1,80 @@
 /**
- * Any CSS included here will be global. The classic template
- * bundles Infima by default. Infima is a CSS framework designed to
- * work well for content-centric websites.
+ * Global CSS.
+ * Docusaurus classic template bundles Infima by default.
  */
 
-/* You can override the default Infima variables here. */
+/* =========================
+   Light mode
+   ========================= */
 :root {
-  --ifm-color-primary: #2e8555;
-  --ifm-color-primary-dark: #29784c;
-  --ifm-color-primary-darker: #277148;
-  --ifm-color-primary-darkest: #205d3b;
-  --ifm-color-primary-light: #33925d;
-  --ifm-color-primary-lighter: #359962;
-  --ifm-color-primary-lightest: #3cad6e;
+  /* Primary: Prussian Blue */
+  --ifm-color-primary: #023047;
+  --ifm-color-primary-dark: #012a3f;
+  --ifm-color-primary-darker: #01263a;
+  --ifm-color-primary-darkest: #011e2f;
+  --ifm-color-primary-light: #033a57;
+  --ifm-color-primary-lighter: #04405f;
+  --ifm-color-primary-lightest: #055072;
+
+  /* Accents */
+  --ifm-color-warning: #ffb703; /* honey */
+  --ifm-color-danger: #fb8500;  /* orange */
+
+  /* Links & subtle interaction */
+  --ifm-link-color: #219ebc;
+  --ifm-link-hover-color: #1b8aa5;
+
   --ifm-code-font-size: 95%;
-  --docusaurus-highlighted-code-line-bg: rgba(0, 0, 0, 0.1);
+
+  /* Warm code highlight */
+  --docusaurus-highlighted-code-line-bg: rgba(255, 183, 3, 0.2);
 }
 
-/* For readability concerns, you should choose a lighter palette in dark mode. */
+/* =========================
+   Dark mode
+   ========================= */
 [data-theme='dark'] {
-  --ifm-color-primary: #25c2a0;
-  --ifm-color-primary-dark: #21af90;
-  --ifm-color-primary-darker: #1fa588;
-  --ifm-color-primary-darkest: #1a8870;
-  --ifm-color-primary-light: #29d5b0;
-  --ifm-color-primary-lighter: #32d8b4;
-  --ifm-color-primary-lightest: #4fddbf;
-  --docusaurus-highlighted-code-line-bg: rgba(0, 0, 0, 0.3);
+  /* Keep Prussian Blue dominant, slightly lifted for readability */
+  --ifm-color-primary: #219ebc;
+  --ifm-color-primary-dark: #1b8aa5;
+  --ifm-color-primary-darker: #187f98;
+  --ifm-color-primary-darkest: #13657a;
+  --ifm-color-primary-light: #2fa9c4;
+  --ifm-color-primary-lighter: #39b1cb;
+  --ifm-color-primary-lightest: #5fc2d8;
+
+  /* Accents remain warm */
+  --ifm-color-warning: #ffb703;
+  --ifm-color-danger: #fb8500;
+
+  /* Code highlight slightly stronger in dark mode */
+  --docusaurus-highlighted-code-line-bg: rgba(255, 183, 3, 0.3);
+}
+
+/* =========================
+   Optional polish
+   ========================= */
+
+/* Headings feel more anchored */
+.markdown h1,
+.markdown h2,
+.markdown h3 {
+  color: var(--ifm-color-primary);
+}
+
+/* Links feel intentional, not loud */
+a {
+  text-decoration-thickness: 1px;
+  text-underline-offset: 2px;
+}
+
+/* Featured / Start Here badge tuning */
+.badge--primary {
+  background-color: #ffb703;
+  color: #023047;
+}
+
+.badge--secondary {
+  background-color: #023047;
+  color: #ffffff;
 }
