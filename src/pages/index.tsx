@@ -13,12 +13,11 @@ export default function Home() {
               <p className={styles.kicker}>Hey, I’m Jessica…</p>
 
               <h1 className={styles.heroTitle}>
-                I build infrastructure, privacy-first systems, and open-source tools.
+                A web3 focused software engineer interested in privacy, scalability, and open-source tooling.
               </h1>
 
               <p className={styles.heroBody}>
-                This is a placeholder intro section. Use it for a short “what I do” + “what
-                I’m writing about” blurb.
+                When my code editor is closed, you can find me biking, skiing, or exploring far flung places.
               </p>
 
               <div className={styles.heroCtas}>
