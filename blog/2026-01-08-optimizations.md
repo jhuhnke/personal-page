@@ -14,7 +14,7 @@ The rules for the year of optimizations are simple:
 - Try one focused change for a month  
 - Measure how well it actually goes
 - If it works, it stays and if it doesn't, it goes  
-
+<!-- truncate -->
 ---
 
 ## Why I’m doing this
