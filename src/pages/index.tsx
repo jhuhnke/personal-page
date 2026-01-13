@@ -33,8 +33,8 @@ export default function Home() {
             <div className={styles.heroImageWrap}>
               <img
                 className={styles.heroImage}
-                src="/img/hero-placeholder.jpg"
-                alt="Placeholder portrait"
+                src="/img/jessica-ski.jpg"
+                alt="Jessica skiing"
               />
             </div>
           </div>
@@ -77,8 +77,8 @@ export default function Home() {
               <div className={styles.featureImageWrap}>
                 <img
                   className={styles.featureImage}
-                  src="/img/section-placeholder.jpg"
-                  alt="Placeholder lifestyle shot"
+                  src="/img/jessica-bike.jpg"
+                  alt="Jessica biking"
                 />
               </div>
 
