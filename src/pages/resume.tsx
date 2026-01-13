@@ -25,8 +25,8 @@ export default function Resume() {
         <section className={styles.section}>
           <h2>Experience</h2>
           <ul>
-            <li><b>GlobalStake</b> — (Role) · (Dates)</li>
-            <li><b>Flipside Crypto</b> — (Role) · (Dates)</li>
+            <li><b>GlobalStake</b> — Head of Software Development · August 2023 - Present</li>
+            <li><b>Flipside Crypto</b> — Data Analytics Engineer · November 2021 - June 2023</li>
           </ul>
         </section>
 
