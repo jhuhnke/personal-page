@@ -10,11 +10,12 @@
 
 .title {
   margin: 0 0 0.5rem 0;
+  color: var(--site-ink);
 }
 
 .subtitle {
   margin: 0 0 1.25rem 0;
-  opacity: 0.8;
+  color: var(--site-muted);
 }
 
 .actions {
@@ -35,6 +36,11 @@
   text-decoration: none;
 }
 
+.primary:hover {
+  filter: brightness(0.97);
+  text-decoration: none;
+}
+
 .secondary {
   display: inline-flex;
   align-items: center;
@@ -47,6 +53,137 @@
   text-decoration: none;
 }
 
+.secondary:hover {
+  text-decoration: none;
+  border-color: rgba(2, 48, 71, 0.45);
+}
+
 .section {
   margin-top: 2rem;
+}
+
+.list {
+  margin: 0.75rem 0 0 0;
+  padding-left: 1.25rem;
+  color: var(--ifm-font-color-base);
+}
+
+/* =========================
+   Skills: whimsical circle grid
+   ========================= */
+
+.sectionHeader {
+  display: flex;
+  align-items: baseline;
+  gap: 0.75rem;
+  flex-wrap: wrap;
+}
+
+.sectionHint {
+  margin: 0;
+  color: var(--site-muted);
+  font-size: 0.95rem;
+}
+
+/* 2x3 grid (responsive) */
+.skillGrid {
+  margin-top: 1.25rem;
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 1.25rem;
+  align-items: center;
+}
+
+/* Circle base */
+.skillCircle {
+  aspect-ratio: 1 / 1;
+  border-radius: 999px;
+  display: grid;
+  place-items: center;
+  text-align: center;
+
+  /* whimsy */
+  transform: rotate(-1.5deg);
+  transition: transform 180ms ease, filter 180ms ease;
+
+  /* crisp edges */
+  border: 1px solid rgba(2, 48, 71, 0.14);
+  box-shadow: 0 12px 26px rgba(0, 0, 0, 0.10);
+
+  /* keep circles from getting comically huge */
+  max-width: 220px;
+  width: 100%;
+  margin: 0 auto;
+}
+
+.skillCircle:hover {
+  transform: rotate(0deg) translateY(-2px);
+  filter: brightness(1.02);
+}
+
+.skillText {
+  white-space: pre-line; /* supports \n in labels */
+  font-weight: 900;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  font-size: 0.9rem;
+  line-height: 1.15;
+  padding: 0 0.9rem;
+}
+
+/* Tones (use your palette, but keep it readable in both modes) */
+.tone_honey {
+  background: rgba(255, 183, 3, 0.92);
+  color: #023047;
+}
+
+.tone_honeySoft {
+  background: rgba(255, 183, 3, 0.22);
+  color: var(--ifm-font-color-base);
+  border-color: rgba(255, 183, 3, 0.35);
+}
+
+.tone_orange {
+  background: rgba(251, 133, 0, 0.88);
+  color: #023047;
+}
+
+.tone_teal {
+  background: rgba(33, 158, 188, 0.92);
+  color: #023047;
+}
+
+.tone_tealSoft {
+  background: rgba(33, 158, 188, 0.20);
+  color: var(--ifm-font-color-base);
+  border-color: rgba(33, 158, 188, 0.30);
+}
+
+.tone_navy {
+  background: rgba(2, 48, 71, 0.92);
+  color: rgba(255, 255, 255, 0.92);
+  border-color: rgba(255, 255, 255, 0.14);
+}
+
+/* Dark mode polish: soften shadows a bit (optional) */
+[data-theme="dark"] .skillCircle {
+  box-shadow: 0 16px 34px rgba(0, 0, 0, 0.28);
+  border-color: rgba(255, 255, 255, 0.12);
+}
+
+/* Responsive: 2 columns then 1 column */
+@media (max-width: 900px) {
+  .skillGrid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+@media (max-width: 520px) {
+  .skillGrid {
+    grid-template-columns: 1fr;
+  }
+
+  .skillCircle {
+    max-width: 260px;
+  }
 }
