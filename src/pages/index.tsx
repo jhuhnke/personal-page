@@ -10,7 +10,7 @@ export default function Home() {
         <section className={styles.hero}>
           <div className={styles.heroInner}>
             <div className={styles.heroText}>
-              <p className={styles.kicker}>Hey, I’m Jessica…</p>
+              <p className={styles.kicker}>Gm, I’m Jessica…</p>
 
               <h1 className={styles.heroTitle}>
                 A web3 focused software engineer interested in privacy, scalability, and open-source tooling.
@@ -86,7 +86,6 @@ export default function Home() {
                 <div className={styles.featureCardTitle}>Here’s what I believe…</div>
                 <div className={styles.featureCardBody}>
                   <p>Simple systems beat complicated ones — especially when you’re early.</p>
-                  <p>If it isn’t observable, it isn’t reliable.</p>
                   <p>Open source is a force multiplier: document, share, iterate.</p>
                   <p>The best work is calm, consistent, and compounding.</p>
                 </div>

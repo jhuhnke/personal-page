@@ -1,6 +1,10 @@
-/* Page layout container */
+/* =========================
+   HERO (light region)
+   ========================= */
+
 .hero {
   padding: 3.5rem 1.25rem;
+  background: var(--ifm-background-color);
 }
 
 .heroInner {
@@ -12,56 +16,29 @@
   align-items: center;
 }
 
-/* Left column */
 .heroText {
   max-width: 560px;
 }
 
-
-/* Wave sits between light hero and dark region */
-.waveWrap {
-  line-height: 0; /* kills tiny whitespace from inline SVG */
-  background: var(--ifm-background-color); /* top region color */
-}
-
-.wave {
-  display: block;
-  width: 100%;
-  height: 128px; /* adjust wave height */
-}
-
-/* The wave itself should be the dark region color */
-.wavePath {
-  fill: var(--site-band-bg);
-}
-
-.homepageDarkRegion {
-  background: var(--site-band-bg);
-  margin-top: -2px;
-  margin-bottom: -4rem; 
-  padding-bottom: 4rem;
-}
-
-
 .kicker {
   margin: 0 0 0.75rem 0;
-  font-weight: 600;
+  font-weight: 700;
   letter-spacing: 0.02em;
-  color: var(--ifm-color-primary);
+  color: var(--ifm-link-color);
 }
 
 .heroTitle {
   margin: 0 0 1rem 0;
   font-size: clamp(2rem, 3.4vw, 3rem);
   line-height: 1.1;
-  color: var(--ifm-color-primary);
+  color: var(--site-ink);
 }
 
 .heroBody {
   margin: 0 0 1.5rem 0;
   font-size: 1.05rem;
   line-height: 1.6;
-  opacity: 0.9;
+  color: var(--site-muted);
 }
 
 /* CTAs */
@@ -79,7 +56,7 @@
   border-radius: 999px;
   background: var(--ifm-color-warning);
   color: #023047;
-  font-weight: 700;
+  font-weight: 800;
   text-decoration: none;
 }
 
@@ -96,7 +73,7 @@
   border-radius: 999px;
   border: 1px solid rgba(2, 48, 71, 0.25);
   color: var(--ifm-link-color);
-  font-weight: 700;
+  font-weight: 800;
   text-decoration: none;
 }
 
@@ -119,6 +96,49 @@
   box-shadow: 0 10px 28px rgba(0, 0, 0, 0.12);
 }
 
+/* =========================
+   WAVE DIVIDER
+   ========================= */
+
+.waveWrap {
+  line-height: 0;
+  background: var(--ifm-background-color);
+
+  /* no extra gap under wave */
+  padding-bottom: 0;
+
+  /* seam killer */
+  margin-bottom: -2px;
+}
+
+.wave {
+  display: block;
+  width: 100%;
+  height: 128px;
+
+  /* extra seam killer on some browsers */
+  margin-bottom: -1px;
+}
+
+.wavePath {
+  fill: var(--site-band-bg);
+}
+
+/* =========================
+   DARK REGION (bottom half)
+   ========================= */
+
+.homepageDarkRegion {
+  background: var(--site-band-bg);
+
+  /* pull up under wave to remove white strip */
+  margin-top: -6px;
+
+  /* extend behind footer so there's no gap */
+  margin-bottom: -4rem;
+  padding-bottom: 4rem;
+}
+
 /* Band section */
 .band {
   padding: 2.25rem 1.25rem;
@@ -130,14 +150,14 @@
   max-width: 900px;
   margin: 0 auto;
   text-align: center;
-  font-weight: 600;
+  font-weight: 650;
   line-height: 1.6;
   color: var(--site-band-text);
 }
 
 /* Feature section */
 .feature {
-  padding: 3.5rem 1.25rem 4.25rem 1.25rem;
+  padding: 2.75rem 1.25rem 4.25rem 1.25rem;
   background: var(--site-band-bg);
 }
 
@@ -149,6 +169,9 @@
   gap: 2rem;
   align-items: center;
   color: var(--site-band-text);
+
+  /* anchor the overhang label */
+  position: relative;
 }
 
 .featureImageWrap {
@@ -160,49 +183,66 @@
   width: min(560px, 100%);
   aspect-ratio: 4 / 3;
   object-fit: cover;
-  border-radius: 14px;
-  box-shadow: 0 10px 28px rgba(0, 0, 0, 0.12);
+  border-radius: 16px;
+  box-shadow: 0 14px 34px rgba(0, 0, 0, 0.28);
 }
 
-/* Card on the right */
+/* =========================
+   Beliefs card
+   - matches blue region (no white)
+   - readable text
+   ========================= */
+
 .featureCard {
-  background: var(--site-surface); /* dark surface in dark mode */
-  color: var(--ifm-font-color-base);
-  border-radius: 14px;
-  padding: 1.5rem 1.5rem 1.25rem 1.5rem;
-  box-shadow: var(--site-shadow);
-  border: 1px solid rgba(255, 255, 255, 0.06);
+  background: var(--site-band-bg); /* EXACT match to wave/bg */
+
+  border-radius: 16px;
+  padding: 1.6rem 1.6rem 1.25rem 1.6rem;
+
+  position: relative;
 }
 
-/* Make the title pill feel consistent without relying on light blue */
+/* Overhang banner:
+   - above the text box
+   - slightly left so it always overlaps the image */
 .featureCardTitle {
-  display: inline-block;
-  font-size: 1.35rem;
-  font-weight: 800;
-  background: rgba(255, 183, 3, 0.22); /* honey tint */
-  padding: 0.4rem 0.65rem;
-  border-radius: 10px;
-  color: var(--site-ink);
-  margin-bottom: 0.85rem;
+  width: 220px;
+  white-space: normal;
+  line-height: 1.05;
+
+  font-size: 1.22rem;
+  font-weight: 900;
+
+  background: rgba(255, 183, 3, 0.92);
+  color: #023047;
+
+  padding: 0.55rem 0.75rem;
+  border-radius: 12px;
+
+  position: absolute;
+  top: -40px;                 /* move it down to match your screenshot target */
+  left: calc(50% - 320px);   /* move it left so it sits over the image edge */
+
+  z-index: 3;
+  border: 1px solid rgba(2, 48, 71, 0.18);
+  box-shadow: 0 12px 22px rgba(0, 0, 0, 0.22);
 }
 
+/* Readable body text on dark card */
 .featureCardBody p {
-  margin: 0 0 0.85rem 0;
-  line-height: 1.65;
-  color: var(--site-muted); /* instead of opacity hacks */
+  margin: 0 0 0.95rem 0;
+  line-height: 1.7;
+  color: rgba(255, 255, 255, 0.88);
 }
 
-.heroTitle {
-  color: var(--site-ink);
-}
-.kicker {
-  color: var(--ifm-link-color);
-}
-.heroBody {
-  color: var(--site-muted);
+.featureCardBody p:last-child {
+  margin-bottom: 0;
 }
 
-/* Responsive */
+/* =========================
+   Responsive
+   ========================= */
+
 @media (max-width: 900px) {
   .heroInner,
   .featureInner {
@@ -212,5 +252,12 @@
   .heroImageWrap,
   .featureImageWrap {
     justify-content: flex-start;
+  }
+
+  /* On small screens, keep label in-bounds */
+  .featureCardTitle {
+    left: 18px;
+    top: 18px;
+    width: 240px;
   }
 }
