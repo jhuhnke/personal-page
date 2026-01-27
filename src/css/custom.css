@@ -62,30 +62,62 @@
   --docusaurus-highlighted-code-line-bg: rgba(255, 183, 3, 0.28);
 }
 
-/* Footer uses the same band color */
-.footer {
-  margin-top: 0 !important;
-  border-top: 0 !important;
-  background-color: var(--site-band-bg);
-  color: var(--site-band-text);
-}
+/* =========================
+   Minimal footer (matches page bg)
+   ========================= */
 
-.footer__title {
-  color: rgba(255, 183, 3, 0.95); /* honey accent */
-}
-
-.footer__link-item {
-  color: rgba(255, 255, 255, 0.88);
-}
-
-.footer__link-item:hover {
-  color: #ffb703;
-}
-
-.footer__copyright {
-  color: rgba(255, 255, 255, 0.75);
-}
-
-.footer--dark {
-  border-top: 0 !important;
-}
+   .footer {
+    margin-top: 0 !important;
+    border-top: 0 !important;
+    background: var(--ifm-background-color);
+    padding: 2.25rem 1.25rem 1.75rem;
+  }
+  
+  /* Center the links row */
+  .footer__links {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 0.9rem;
+  }
+  
+  /* Remove default multi-column spacing */
+  .footer__col {
+    margin: 0;
+  }
+  
+  /* Hide titles (we don't want "Site", "Community", etc.) */
+  .footer__title {
+    display: none;
+  }
+  
+  /* Force a single horizontal row of links */
+  .footer__items {
+    display: flex;
+    flex-direction: row;
+    gap: 1.75rem;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  /* Link styling */
+  .footer__link-item {
+    font-weight: 850;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    font-size: 0.85rem;
+    color: var(--site-muted);
+    text-decoration: none;
+  }
+  
+  .footer__link-item:hover {
+    color: var(--ifm-link-color);
+    text-decoration: none;
+  }
+  
+  /* Copyright below */
+  .footer__copyright {
+    text-align: center;
+    font-size: 0.85rem;
+    color: var(--site-muted);
+  }
+  

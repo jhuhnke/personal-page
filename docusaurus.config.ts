@@ -56,26 +56,31 @@ const config: Config = {
       respectPrefersColorScheme: true,
     },
     navbar: {
-      title: 'My Site',
-      logo: {
-        alt: 'My Site Logo',
-        src: 'img/logo.svg',
-      },
+      title: "Jessica Huhnke",
       items: [
-        // Removed docs from navbar
-        {to: '/blog', label: 'Blog', position: 'left'},
-        {to: '/resume', label: 'Resume', position: 'left'},
+        { to: "/blog", label: "Blog", position: "right" },
+        { to: "/resume", label: "Resume", position: "right" },
         {
-          href: 'https://github.com/jhuhnke/personal-page',
-          label: 'GitHub',
-          position: 'right',
+          href: "https://github.com/jhuhnke",
+          label: "GitHub",
+          position: "right",
         },
       ],
-    },
+    },   
     footer: {
-      style: 'dark',
-      copyright: `Copyright © ${new Date().getFullYear()} My Project, Inc. Built with Docusaurus.`,
-    },
+      style: "light",
+      links: [
+        {
+          title: "Elsewhere",
+          items: [
+            { label: "X", href: "https://x.com/web3_analyst" },
+            { label: "LinkedIn", href: "https://linkedin.com/in/web3-analyst" },
+            { label: "GitHub", href: "https://github.com/jhuhnke" },
+          ],
+        },
+      ],
+      copyright: `© ${new Date().getFullYear()} Jessica Huhnke`,
+    },       
     prism: {
       theme: prismThemes.github,
       darkTheme: prismThemes.dracula,
